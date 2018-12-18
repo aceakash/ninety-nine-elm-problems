@@ -7,4 +7,12 @@ module P01 exposing (last)
 
 last : List a -> Maybe a
 last list =
-    List.head (List.reverse list)
+    case list of
+        [] ->
+            Nothing
+
+        x :: [] ->
+            Just x
+
+        x :: xs ->
+            last xs
