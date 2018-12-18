@@ -1,7 +1,7 @@
 -- Implement the function penultimate to find the next to last element of a list.
 
 
-module P02 exposing (penultimate, penultimate2)
+module P02 exposing (penultimate)
 
 
 penultimate : List a -> Maybe a

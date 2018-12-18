@@ -8,5 +8,19 @@ import List exposing (..)
 
 
 elementAt : Int -> List a -> Maybe a
-elementAt index =
+elementAt index list =
+    case list of
+        [] ->
+            Nothing
+
+        x :: xs ->
+            if index == 1 then
+                Just x
+
+            else
+                elementAt (index - 1) xs
+
+
+elementAt2 : Int -> List a -> Maybe a
+elementAt2 index =
     take index >> reverse >> head
