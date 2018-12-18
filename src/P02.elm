@@ -1,7 +1,7 @@
 -- Implement the function penultimate to find the next to last element of a list.
 
 
-module P02 exposing (penultimate)
+module P02 exposing (penultimate, penultimate2)
 
 
 penultimate : List a -> Maybe a
@@ -18,3 +18,8 @@ penultimate list =
 
         x :: xs ->
             penultimate xs
+
+
+penultimate2 : List a -> Maybe a
+penultimate2 =
+    List.reverse >> List.tail >> Maybe.withDefault [] >> List.head
